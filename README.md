@@ -1,9 +1,21 @@
 scilifelab.github.io
 ====================
 
-Web portal for open source (research) projects at SciLifeLab
+Web portal for open source (research) projects at SciLifeLab. The site will feature complete, ready-for-use software along with proper documentation and installation instructions.
 
-Submit a pull request if you want to add a project to the site.
+Submit a pull request if you have a project that belongs on the list.
+
+
+General process overview
+--------------------------
+The first step will be to get the code.
+
+If you are a collaborator at the SciLifeLab GitHub organization it's easiest if you just clone the repo and if not, fork it.
+
+Once you have the code, create a branch ``/project/my-awesome-project`` to work in and open a pull request at GitHub. You can continue to push changes before merging the code. The pull request can be used for general discussion. To make everything super easy, it is great if you provide some details on the project like links to the public code repository and documentation here as well.
+
+Once you feel OK with the result and the code has been validated to work by lets say 2 other people, we will merge your code and the public site will update automatically.
+
 
 Setup (optional)
 -----------------
