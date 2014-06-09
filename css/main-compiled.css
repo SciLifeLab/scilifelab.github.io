@@ -108,7 +108,7 @@ body {
 .side-line {
   position: absolute;
   top: 10px;
-  left: 110px;
+  left: 112px;
   z-index: -1;
   border-left: 2px solid #ebeef3;
   height: 100%; }
