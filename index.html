@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <header class="text-center">
+    <div class="scilife-logo animated bounceInUp">
+      Sci<span class="scilife-logo__colored">Li<i>f</i>e</span>Lab
+    </div>
+    <div class="subheader animated fadeIn delay-1s">
+      Open source is in our DNA.
+    </div>
+  </header>
+
+  <section class="animated fadeIn delay-1s">
+    <div class="project__list">
+      <div class="side-line"></div>
+
+        {% for post in site.posts %}
+          <div class="project__wrapper">
+            <a href="{{ post.code }}" class="project__action__wrapper">
+              <div class="project__action">
+                <div class="icon-star"></div>
+                {{ post.stars }}
+              </div>
+            </a>
+
+            <a class="project" href="{{ post.url | prepend: site.baseurl }}">
+              <div class="project__logo bg-yellow">
+                <div class="project__logo__icon {{ post.icon }}"></div>
+              </div>
+              <div class="project__intro">
+                <span class="project__title">{{ post.project }}</span>
+                {{ post.intro }}
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,12 @@
+# Site settings
+title: Open Source at SciLifeLab
+email: robin.andeer@scilifelab.se
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+baseurl: ""
+url: "http://opensource.scilifelab.se"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+sass:
+  sass_dir: _sass
