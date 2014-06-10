@@ -1,7 +1,7 @@
 scilifelab.github.io
 ====================
 
-Web portal for open source (research) projects at SciLifeLab. The site will feature complete, ready-for-use software along with proper documentation and installation instructions.
+Web portal for open source (research) projects at [SciLifeLab](http://www.scilifelab.se/). The site will feature complete, ready-for-use software along with proper documentation and installation instructions.
 
 Submit a pull request if you have a project that belongs on the list.
 
@@ -38,27 +38,33 @@ Now you should be prepared to serve the site locally.
 
 The ``--watch`` option will watch for changes to file and recompile the static assets automatically. Quite handy when you are writing your project page or altering SASS files.
 
+See the [Jekyll Documentation](http://jekyllrb.com/docs/installation/) for more information.
+
 
 Adding a project page
 ----------------------
-Each project page is defined in a Jekyll post (markdown + YAML) and optionally a few assets. To add a new project page to the repository/site do the following.
+Each project page is defined in a Jekyll post (markdown + YAML) and optionally a few assets.
+
+#### Step 1: Adding a new project page
+To add a new project page to the repository/site do the following.
 
 1. Duplicate the template file
 
-You'll find it in the ``_posts`` directory. Name your copy ``<year>-<month>-<day>-<project name>.markdown``.
+	1. You'll find it in the ``_posts`` directory. Name your copy ``<year>-<month>-<day>-<project name>.markdown``.
 
 2. Edit the YAML properties at the top of the file
 
 3. Special assets (optional)
 There are a list of special assets that *optionally* belong to each of the projects. They are all defied in the YAML portion of the project markdown file.
 
-A project icon can be chosen from the characters provided in the [Entypo icon font][entypo]. Find your corresponding class name in the [Entypo css file][http://cdn.jsdelivr.net/font-entypo/0.1/dev/entypo.css].
+#### Step 2: Project branding
+A project icon can be chosen from the characters provided in the [Entypo icon font][entypo]. Find your corresponding class name in the [Entypo css file](http://cdn.jsdelivr.net/font-entypo/0.1/dev/entypo.css).
 
 It's highly recommended that you compose a poster image, for example with project logo. Don't worry too much about the file size - ~300-400 KB is totally fine. Bigger is better.
 
 Creating the poster doesn't have to be very difficult. Grab a [public domain photo][unsplash] and compose with [Sketch][sketch], Keynote, or Powerpoint.
 
-4. Write the body of project page
+#### Step 3: Write the body of project page
 
 It should include:
 - a brief usage guide or reference to your main documentaion
@@ -79,9 +85,9 @@ def some_function(argument):
 {% endhighlight %}
 ```
 
-If you are having trouble figuring it out, just take at the source for another project page or this README file.
+If you are having trouble figuring it out, just take a look at the source for another project page or this README file.
 
-Lastly, if you want to use any other assets like images inline with you text you should commit them to the repository. Store them in the ``img`` folder under a separate project directory for sanity.
+Finally, if you want to use any other assets like images inline with you text you should commit them to the repository. Store them in the ``img`` folder under a separate project directory for sanity.
 
 
 Developing SASS
