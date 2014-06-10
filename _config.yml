@@ -5,6 +5,10 @@ description: "Write an awesome description for your new site here. You can edit 
 baseurl: ""
 url: "http://opensource.scilifelab.se"
 
+# Google Analytics
+ga_id: "UA-18017148-9"
+ga_host: "scilifelab.se"
+
 # Build settings
 markdown: kramdown
 permalink: pretty
