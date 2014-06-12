@@ -39,6 +39,20 @@ body {
 .scilife-logo__colored {
   color: #86BE42; }
 
+.scilife-footer {
+  border-top: 1px solid #dedede;
+  padding: 50px 0 50px;
+  text-align: center; }
+  .scilife-footer .scilife-logo {
+    font-size: 50px;
+    margin: 0; }
+    .scilife-footer .scilife-logo a {
+      color: #525f6b; }
+  .scilife-footer .subheader {
+    font-size: 12px; }
+    .scilife-footer .subheader a {
+      color: #878787; }
+
 .text-center {
   text-align: center; }
 
@@ -108,10 +122,10 @@ body {
 .side-line {
   position: absolute;
   top: 10px;
+  bottom: 10px;
   left: 112px;
   z-index: -1;
-  border-left: 2px solid #ebeef3;
-  height: 100%; }
+  border-left: 2px solid #ebeef3; }
 
 .project {
   -webkit-flex-basis: 100%;
@@ -279,7 +293,7 @@ h2 {
 .project-title {
   color: #2980B9; }
 
-p, pre, h2, h1 {
+p, pre, h2, h1, ul {
   max-width: 650px;
   margin-left: auto;
   margin-right: auto; }
