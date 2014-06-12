@@ -44,13 +44,16 @@ body {
 	color: #525f6b;
 	font-size: 50px;
 	margin-top: 50px;
-
-	@media screen and (min-width: 400px) {
-		font-size: 70px;
-	}
-
-	@media screen and (min-width: 600px) {
-		font-size: 90px;
+	img {
+		max-width:280px;
+    	
+		@media screen and (min-width: 400px) {
+			max-width:320px;
+		}
+    	
+		@media screen and (min-width: 600px) {
+			max-width:390px;
+		}
 	}
 }
 
@@ -60,14 +63,10 @@ body {
 
 .scilife-footer {
 	border-top:1px solid #dedede;
-	padding:50px 0 50px;
+	padding:0 0 50px;
 	text-align: center;
-	.scilife-logo {
-		font-size:50px;
-		margin:0;
-		a {
-			color: #525f6b;
-		}
+	.scilife-logo img {
+		max-width:180px;
 	}
 	.subheader {
 		font-size:12px;
@@ -82,7 +81,6 @@ body {
 }
 
 .subheader {
-	margin-top: 5px;
 	font-size: 12px;
 
 	@media screen and (min-width: 400px) {
