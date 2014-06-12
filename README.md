@@ -25,10 +25,15 @@ You first need ruby [installed][ruby install] on your system.
 
 Next we install our ruby dependencies.
 
+> If you get file permission errors, prefix the commands with sudo to run as an administrator.
+
 ```bash
+    $ gem install jekyll
     $ bundle install
     $ cd _sass && bourbon install && cd -
 ```
+
+> If you get the error `-bash: bundle: command not found` you need install it (`gem install bundle`), then log out and in again
 
 Now you should be prepared to serve the site locally.
 
