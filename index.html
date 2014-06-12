@@ -19,7 +19,7 @@ layout: default
 
         {% for post in site.posts %}
           <div class="project__wrapper">
-            <a href="{{ post.code }}" class="project__action__wrapper">
+            <a href="{{ post.code }}" title="See the {{ post.project }} code" class="project__action__wrapper">
               <div class="project__action">
                 <div class="icon-star"></div>
                 {{ post.stars }}

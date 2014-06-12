@@ -167,6 +167,23 @@ body {
   background: #fff;
   border-radius: 5px 0 0 5px;
   border-right-width: 1px; }
+  .project__action__wrapper:before {
+    content: attr(title);
+    position: absolute;
+    display: block;
+    top: -10px;
+    right: 578px;
+    white-space: nowrap;
+    padding: 3px 5px;
+    background-color: #525f6b;
+    color: #fff;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity .25s 0.5s ease-in-out;
+    -moz-transition: opacity .25s 0.5s ease-in-out;
+    -webkit-transition: opacity .25s 0.5s ease-in-out; }
+  .project__action__wrapper:hover:before {
+    opacity: 1; }
 
 .project__action {
   display: -webkit-flex;
