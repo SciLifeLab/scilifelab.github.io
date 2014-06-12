@@ -29,21 +29,33 @@ body {
   color: #525f6b;
   font-size: 50px;
   margin-top: 50px; }
-  @media screen and (min-width: 400px) {
-    .scilife-logo {
-      font-size: 70px; } }
-  @media screen and (min-width: 600px) {
-    .scilife-logo {
-      font-size: 90px; } }
+  .scilife-logo img {
+    max-width: 280px; }
+    @media screen and (min-width: 400px) {
+      .scilife-logo img {
+        max-width: 320px; } }
+    @media screen and (min-width: 600px) {
+      .scilife-logo img {
+        max-width: 390px; } }
 
 .scilife-logo__colored {
   color: #86BE42; }
+
+.scilife-footer {
+  border-top: 1px solid #dedede;
+  padding: 0 0 50px;
+  text-align: center; }
+  .scilife-footer .scilife-logo img {
+    max-width: 180px; }
+  .scilife-footer .subheader {
+    font-size: 12px; }
+    .scilife-footer .subheader a {
+      color: #878787; }
 
 .text-center {
   text-align: center; }
 
 .subheader {
-  margin-top: 5px;
   font-size: 12px; }
   @media screen and (min-width: 400px) {
     .subheader {
@@ -108,10 +120,10 @@ body {
 .side-line {
   position: absolute;
   top: 10px;
+  bottom: 10px;
   left: 112px;
   z-index: -1;
-  border-left: 2px solid #ebeef3;
-  height: 100%; }
+  border-left: 2px solid #ebeef3; }
 
 .project {
   -webkit-flex-basis: 100%;
@@ -153,6 +165,23 @@ body {
   background: #fff;
   border-radius: 5px 0 0 5px;
   border-right-width: 1px; }
+  .project__action__wrapper:before {
+    content: attr(title);
+    position: absolute;
+    display: block;
+    top: -10px;
+    right: 578px;
+    white-space: nowrap;
+    padding: 3px 5px;
+    background-color: #525f6b;
+    color: #fff;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity .25s 0.5s ease-in-out;
+    -moz-transition: opacity .25s 0.5s ease-in-out;
+    -webkit-transition: opacity .25s 0.5s ease-in-out; }
+  .project__action__wrapper:hover:before {
+    opacity: 1; }
 
 .project__action {
   display: -webkit-flex;
@@ -279,7 +308,7 @@ h2 {
 .project-title {
   color: #2980B9; }
 
-p, pre, h2, h1 {
+p, pre, h2, h1, ul {
   max-width: 650px;
   margin-left: auto;
   margin-right: auto; }

@@ -3,3 +3,4 @@ _site/
 _sass/bourbon
 
 *.sublime-*
+.DS_Store

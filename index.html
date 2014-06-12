@@ -6,7 +6,7 @@ layout: default
 
   <header class="text-center">
     <div class="scilife-logo animated bounceInUp">
-      Sci<span class="scilife-logo__colored">Li<i>f</i>e</span>Lab
+	  <img src="{{ site.baseurl }}/img/SciLifeLab_logo.png" title="Science for Life Laboratory" />
     </div>
     <div class="subheader animated fadeIn delay-1s">
       Open source is in our DNA.
@@ -19,7 +19,7 @@ layout: default
 
         {% for post in site.posts %}
           <div class="project__wrapper">
-            <a href="{{ post.code }}" class="project__action__wrapper">
+            <a href="{{ post.code }}" title="See the {{ post.project }} code" class="project__action__wrapper">
               <div class="project__action">
                 <div class="icon-star"></div>
                 {{ post.stars }}
