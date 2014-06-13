@@ -25,17 +25,14 @@ body {
   font-family: Lato, 'Helvetica Neue', sans-serif; }
 
 .scilife-logo {
-  font-family: Baskerville, Georgia, serif;
-  color: #525f6b;
-  font-size: 50px;
   margin-top: 50px; }
-  .scilife-logo img {
+  .scilife-logo > img {
     max-width: 280px; }
     @media screen and (min-width: 400px) {
-      .scilife-logo img {
+      .scilife-logo > img {
         max-width: 320px; } }
     @media screen and (min-width: 600px) {
-      .scilife-logo img {
+      .scilife-logo > img {
         max-width: 390px; } }
 
 .scilife-logo__colored {
@@ -45,11 +42,11 @@ body {
   border-top: 1px solid #dedede;
   padding: 0 0 50px;
   text-align: center; }
-  .scilife-footer .scilife-logo img {
+  .scilife-footer > .scilife-logo > img {
     max-width: 180px; }
-  .scilife-footer .subheader {
+  .scilife-footer > .subheader {
     font-size: 12px; }
-    .scilife-footer .subheader a {
+    .scilife-footer > .subheader a {
       color: #878787; }
 
 .text-center {

@@ -7,7 +7,7 @@ project: "Chanjo"
 icon: "icon-database"
 code: "https://github.com/robinandeer/chanjo"
 intro: "Coverage analysis for clinical sequencing"
-stars: 11
+stars: 14
 poster: "chanjo/poster.jpg"
 ---
 
