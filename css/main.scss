@@ -4,6 +4,7 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 @import 'bourbon/bourbon';
 @import 'flex-box';
+@import 'highlight';
 
 // +--------------------------------------------------------------------
 // |  ios-scrolling: Enable smooth scrolling on iOS devices
@@ -64,7 +65,7 @@ body {
 	padding: 0 0 50px;
 	text-align: center;
 
-	> .scilife-logo > img {
+	> .scilife-logo > a > img {
 		max-width: 180px;
 	}
 
@@ -153,7 +154,7 @@ body {
 	position: absolute;
 	top: 10px;
 	bottom: 10px;
-	left: 112px;
+	left: 115px;
 	z-index: -1;
 	border-left: 2px solid $border-color;
 }
@@ -245,19 +246,20 @@ body {
 }
 
 .project__logo {
+	$size: 48px;
 	@include display(flex);
 	@include align-items(center);
 	@include justify-content(center);
-	min-width: 40px;
-	min-height: 40px;
+	min-width: $size;
+	min-height: $size;
 	margin-right: 15px;
-	border-radius: 40px;
+	border-radius: $size;
 	box-shadow: 0 0 0 4px #fff;
 	background: #bbb;
 }
 
 .project__logo__icon {
-	font-size: 21px;
+	font-size: 20px;
 	line-height: 0;
 	color: #fff;
 }
