@@ -28,7 +28,13 @@ layout: default
 
             <a class="project" href="{{ post.url | prepend: site.baseurl }}">
               <div class="project__logo bg-yellow">
-                <div class="project__logo__icon {{ post.icon }}"></div>
+                {% if post.icon_img %}
+                  <img class="project__logo__img"
+                       src="/img/{{ post.icon_img }}"
+                       width="48" height="48">
+                {% else %}
+                  <div class="project__logo__icon {{ post.icon }}"></div>
+                {% endif %}
               </div>
               <div class="project__intro">
                 <span class="project__title">{{ post.project }}</span>

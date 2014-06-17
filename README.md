@@ -63,11 +63,17 @@ To add a new project page to the repository/site do the following.
 There are a list of special assets that *optionally* belong to each of the projects. They are all defied in the YAML portion of the project markdown file.
 
 #### Step 2: Project branding
-A project icon can be chosen from the characters provided in the [Entypo icon font][entypo]. Find your corresponding class name in the [Entypo css file](http://cdn.jsdelivr.net/font-entypo/0.1/dev/entypo.css).
+A project icon can be picked as shown by on the list of projects. The easiest solution is picking an icon from one the characters provided in the [Entypo icon font][entypo]. Find your corresponding class name in the [Entypo css file](http://cdn.jsdelivr.net/font-entypo/0.1/dev/entypo.css).
+
+A more flexible solution is to provide your own icon as a ``.png`` or ``.svg`` file. Replace the "icon" key in the post-file for a "icon_img" field and type in the relative path to where you put the image from the "img"-folder. E.g. if you put the file under ``img/my_project/my-icon.png`` you would write:
+
+```yaml
+icon_img: my_project/my-icon.png
+```
 
 It's highly recommended that you compose a poster image, for example with project logo. Don't worry too much about the file size - ~300-400 KB is totally fine. Bigger is better.
 
-Creating the poster doesn't have to be very difficult. Grab a [public domain photo][unsplash] and compose with [Sketch][sketch], Keynote, or Powerpoint.
+Creating the poster doesn't have to be very difficult. Grab a [public domain][unsplash] [photo][magdeleine] and compose with [Sketch][sketch], Keynote, or Powerpoint.
 
 #### Step 3: Write the body of project page
 
@@ -116,3 +122,4 @@ If you want to make changes to the SASS files you will (for now) have to:
 [md-tutorial]: http://markdowntutorial.com/
 [sketch]: http://bohemiancoding.com/sketch/
 [unsplash]: http://unsplash.com/
+[magdeleine]: http://magdeleine.co/
