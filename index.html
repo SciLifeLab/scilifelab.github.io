@@ -6,7 +6,7 @@ layout: default
 
   <header class="text-center">
     <div class="scilife-logo animated bounceInUp">
-	  <img src="{{ site.baseurl }}/img/scilifelab-logo.svg" title="Science for Life Laboratory" />
+	  <img src="{{ site.baseurl }}/img/scilifelab-logo.svg" title="Science for Life Laboratory" alt="SciLifeLab logo" />
     </div>
     <div class="subheader animated fadeIn delay-1s">
       Open source is in our DNA.
@@ -31,7 +31,8 @@ layout: default
                 {% if post.icon_img %}
                   <img class="project__logo__img"
                        src="/img/{{ post.icon_img }}"
-                       width="48" height="48">
+                       width="48" height="48"
+                       alt="Project image logo">
                 {% else %}
                   <div class="project__logo__icon {{ post.icon }}"></div>
                 {% endif %}
