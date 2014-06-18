@@ -1,13 +1,11 @@
-scilifelab.github.io
-====================
+# scilifelab.github.io [![Build Status](https://travis-ci.org/SciLifeLab/scilifelab.github.io.svg?branch=master)](https://travis-ci.org/SciLifeLab/scilifelab.github.io)
 
 Web portal for open source (research) projects at [SciLifeLab](http://www.scilifelab.se/). The site will feature complete, ready-for-use software along with proper documentation and installation instructions.
 
 Submit a pull request if you have a project that belongs on the list.
 
 
-General process overview
---------------------------
+## General process overview
 The first step will be to get the code.
 
 If you are a collaborator at the SciLifeLab GitHub organization it's easiest if you just clone the repo and if not, fork it.
@@ -17,8 +15,7 @@ Once you have the code, create a branch ``/project/my-awesome-project`` to work 
 Once you feel OK with the result and the code has been validated to work by lets say 2 other people, we will merge your code and the public site will update automatically.
 
 
-Setup (optional)
------------------
+## Setup (optional)
 It is recommended (but not required) to setup [Jekyll][jekyll] so that you can view the resulting website as you compose your project page.
 
 You first need ruby [installed][ruby install] on your system.
@@ -46,8 +43,7 @@ The ``--watch`` option will watch for changes to file and recompile the static a
 See the [Jekyll Documentation](http://jekyllrb.com/docs/installation/) for more information.
 
 
-Adding a project page
-----------------------
+## Adding a project page
 Each project page is defined in a Jekyll post (markdown + YAML) and optionally a few assets.
 
 #### Step 1: Adding a new project page
@@ -101,8 +97,7 @@ If you are having trouble figuring it out, just take a look at the source for an
 Finally, if you want to use any other assets like images inline with you text you should commit them to the repository. Store them in the ``img`` folder under a separate project directory for sanity.
 
 
-Developing SASS
------------------
+## Developing SASS
 GitHub doesn't support the new SASS compilation built into Jekyll 2.0. This creates a bit of an issue during development.
 
 If you want to make changes to the SASS files you will (for now) have to:
