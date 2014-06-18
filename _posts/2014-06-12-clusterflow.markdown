@@ -47,7 +47,7 @@ There are also two introductory videos that you can find on YouTube:
 * [Advanced Tutorial](http://youtu.be/aBHOcsA2M6w) - How to write your own pipelines and modules
 
 # Contributors
-[Phil Ewels](http://phil.ewels.co.uk "Phil's Homepage") (<i class="icon-github"></i>[ewels](http://ewels.github.io/ "Find Phil on GitHub"), 
+[Phil Ewels](http://phil.ewels.co.uk "Phil's Homepage") (<i class="icon-github"></i>[ewels](https://github.com/ewels/ "Find Phil on GitHub"), 
 <i class="icon-twitter"></i>[tallphil](http://twitter.com/tallphil "Find Phil on GitHub"))
 
 Written whilst working at the [Babraham Institute](http://www.babraham.ac.uk/), maintained at [SciLifeLab](http://www.scilifelab.se/)
