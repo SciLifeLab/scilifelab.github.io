@@ -1,0 +1,149 @@
+//=== Clearfix ==========
+//  .article {
+//    @include clearfix();
+//  }
+
+@mixin clearfix() {
+  & {
+    *zoom: 1;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Center-align a block level element
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// -------------------------------------------------------
+// Link hover styles
+// -------------------------------------------------------
+
+@mixin link-active-styles {
+  &:hover, &:focus, &:active {
+    @content; 
+  }
+}
+
+// -------------------------------------------------------
+// Media queries
+// -------------------------------------------------------
+
+
+// Reference widths from settings file
+@mixin respond-to($media-min, $IE9: true) {
+  @if $IE9 == true {
+    .lt-ie9 & {
+      @content;
+    }
+
+    @media screen and (min-width: $media-min)  {
+      @content;
+    }
+  }
+
+  @else {
+    @media screen and (min-width: $media-min) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-to-max($media-max, $IE9: true) {
+  @if $IE9 == true {
+    .lt-ie9 & {
+      @content;
+    }
+
+    @media screen and (max-width: $media-max - 1px)  {
+      @content;
+    }
+  }
+
+  @else {
+    @media screen and (max-width: $media-max - 1px) {
+      @content;
+    }
+  }
+}
+
+
+@mixin respond-to-min-max($media-min, $media-max, $IE9: true) {
+  @if $IE9 == true {
+    .lt-ie9 & {
+      @content;
+    }
+
+    @media screen and (min-width: $media-min) and (max-width: $media-max)  {
+      @content;
+    }
+  }
+
+  @else {
+     @media screen and (min-width: $media-min) and (max-width: $media-max) {
+      @content;
+    }
+  }
+}
+
+// -------------------------------------------------------
+// HEX to RGB
+// -------------------------------------------------------
+
+// http://codepen.io/sturobson/pen/hdKyv
+@mixin rgba($color, $value) {
+  background-color: $color;
+  background-color: rgba($color, $value);
+}
+
+/*
+ * Used to normalise select dropdowns 
+ * Styles from formalize.me
+ * @include normaliseSelect();
+ */
+@mixin normaliseSelect() {
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  /* IE7 */
+  *padding-top: 2px;
+  *padding-bottom: 1px;
+  *height: auto;
+}
+
+/*
+ * @font-face mixin
+ * @include font-face('family', '../fonts/', 'myfontname');
+ */
+
+@mixin font-face($font-family, $font-url, $font-name) {
+  @font-face {
+    font: {
+      family: $font-family;
+      style: normal;
+      weight: normal;
+    }
+    src: url($font-url + '/' + $font-name + '.eot') format('eot'), 
+       url($font-url + '/' + $font-name + '.woff') format('woff'), 
+       url($font-url + '/' + $font-name + '.ttf')  format('truetype'),
+       url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
+  }
+}
