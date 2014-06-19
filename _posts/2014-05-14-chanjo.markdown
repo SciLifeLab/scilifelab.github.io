@@ -50,15 +50,18 @@ $ pip install chanjo
 
 Contributors
 -------------
-Robin Andeer
+[Robin Andeer][portfolio] (<i class="icon-github"></i>[robinandeer][github], <i class="icon-twitter"></i>[robinandeer][twitter])
 
-Luca Beltrame ([lbeltrame](https://github.com/lbeltrame))
+Luca Beltrame (<i class="icon-github"></i>[lbeltrame](https://github.com/lbeltrame))
 
 
 License
 --------
 MIT
 
+[portfolio]: http://www.robinandeer.com "Robin's Portfolio"
+[github]: https://github.com/robinandeer "Find Robin on GitHub"
+[twitter]: http://twitter.com/robinandeer "Chat with Robin on Twitter"
 [docs]: http://www.chanjo.co
 [demo]: http://www.chanjo.co/en/latest/introduction.html#demo
 [anaconda]: https://store.continuum.io/cshop/anaconda/

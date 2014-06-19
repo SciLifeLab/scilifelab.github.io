@@ -10,6 +10,7 @@ ga_id: "UA-18017148-9"
 ga_host: "scilifelab.se"
 
 # Build settings
+environment: production
 markdown: kramdown
 permalink: pretty
 sass:

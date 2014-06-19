@@ -100,11 +100,11 @@ Finally, if you want to use any other assets like images inline with you text yo
 ## Developing SASS
 GitHub doesn't support the new SASS compilation built into Jekyll 2.0. This creates a bit of an issue during development.
 
-If you want to make changes to the SASS files you will (for now) have to:
+If you want to make changes to the SASS files you will have to:
 
-1. Change ``main-compiled.css`` to ``main.css`` in ``_includes/head.html``.
-2. This will directly load the auto-compiled CSS-file when running ``jekyll server --watch``.
-3. When you are ready, copy the ``_site/css/main.css`` to ``css/main-compiled.css``.
+1. Change the ``environment`` variable in ``_config.yml`` to "development". This will make sure you can use Jekyll's freshly compiled SCSS->CSS file during development.
+2. Run ``jekyll server --watch`` and reload the browser after making some changes to the SCSS files.
+3. When you have finished tinkering, from the root of the project, run the ``_scripts/update_css.sh`` script to update the compiled CSS file which is used when ``environment: production``.
 4. Commit the SCSS and *compiled* CSS changes to the repository.
 
 
