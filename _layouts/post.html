@@ -9,7 +9,7 @@ layout: default
     </div>
   {% endif %}
 
-  <div class="project__body">
+  <div class="project-body">
     <h1 class="text-center">
       <span class="project-title">{{ page.project }}</span> -
       {{ page.title }}
@@ -19,13 +19,15 @@ layout: default
   </div>
 
 </div>
+
 <div class="scilife-footer">
-	<div class="scilife-logo">
-		<a href="{{ site.url }}">
-			<img src="{{ site.baseurl }}/img/scilifelab-logo.svg" title="Science for Life Laboratory" alt="SciLifeLab logo (small)" />
-		</a>
-	</div>
+
+	<a class="scilife-logo" href="{{ site.url }}">
+    <img class="scilife-logo-img" src="{{ site.baseurl }}/img/scilifelab-logo.svg" title="Science for Life Laboratory" alt="SciLifeLab logo (small)" />
+  </a>
+
 	<div class="subheader">
 		<a href="{{ site.url }}">Open source is in our DNA.</a>
 	</div>
+
 </div>

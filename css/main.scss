@@ -1,11 +1,12 @@
 ---
 ---
 
-@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import 'vendor/normalize';
 @import 'bourbon/bourbon';
-@import 'flex-box';
-@import 'highlight';
+@import 'vendor/flex-box';
+@import 'vendor/highlight';
 
+// PLACEHOLDER SELECTORS
 // +--------------------------------------------------------------------
 // |  ios-scrolling: Enable smooth scrolling on iOS devices
 // +--------------------------------------------------------------------
@@ -13,8 +14,26 @@
   -webkit-overflow-scrolling: touch;
 }
 
-a {
-	text-decoration: none;
+// VARIABLES
+$font-color: #3e4853;  // dark gray
+$flat-gray-1: #eCf0f1;
+$border-color: #ebeef3;
+
+// BASE
+html,
+body {
+  width: 100%;
+  height: 100%;
+  // Render fonts thinner
+  -webkit-font-smoothing: antialiased;
+
+  @media screen and (min-width: 500px) {
+    font-size: 105%;
+  }
+}
+
+.text-center {
+  text-align: center;
 }
 
 // Include padding & border in the size of elements
@@ -24,339 +43,36 @@ a {
   @include box-sizing(border-box);
 }
 
-$border-color: #ebeef3;
-
-html,
+// TYPOGRAPHY
 body {
-	width: 100%;
-	height: 100%;
+  font-family: Lato, 'Helvetica Neue', sans-serif;
+  color: $font-color;
 }
 
-body {
-	-webkit-font-smoothing: antialiased;
-	color: #878787;
-	font-family: sans-serif;
-	background: #fff;
-	font-family: Lato, 'Helvetica Neue', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: Baskerville, Georgia, serif;
+  font-weight: normal;
 }
 
-.scilife-logo {
-	margin-top: 50px;
-
-	> img {
-		max-width: 280px;
-	
-		@media screen and (min-width: 400px) {
-			max-width: 320px;
-		}
-    	
-		@media screen and (min-width: 600px) {
-			max-width: 390px;
-		}
-	}
+p {
+  line-height: 1.5em;
 }
 
-.scilife-logo__colored {
-	color: #86BE42;
-}
+// CODE BLOCKS
 
-.scilife-footer {
-	border-top: 1px solid #dedede;
-	padding: 0 0 50px;
-	text-align: center;
-
-	> .scilife-logo > a > img {
-		max-width: 180px;
-	}
-
-	> .subheader {
-		font-size: 12px;
-		a {
-			color: #878787;
-		}
-	}
-}
-
-.text-center {
-	text-align: center;
-}
-
-.subheader {
-	font-size: 12px;
-
-	@media screen and (min-width: 400px) {
-		font-size: 15px;
-	}
-
-	@media screen and (min-width: 600px) {
-		font-size: 20px;
-	}
-}
-
-.delay-1s {
-	@include animation-delay(1s);
-}
-
-.delay-2s {
-	@include animation-delay(2s);
-}
-
-.project__list {
-	width: 80%;
-	max-width: 650px;
-	margin: 70px auto 0 auto;
-	position: relative;
-}
-
-.project__wrapper {
-	position: relative;
-	@include display(flex);
-
-	&:hover {
-		+ .project__divider {
-			opacity: 0;
-		}
-
-		> .project__action__wrapper {
-			opacity: 1;
-		}
-
-		> .project {
-			border-color: $border-color;
-			background: #fff;
-		}
-
-		> .project__new {
-			@include transform(translateX(-75px));
-		}
-	}
-}
-
-.project__divider {
-	border-bottom: 1px solid $border-color;
-	margin-left: 42px;
-	position: relative;
-}
-
-.project__divider__dot {
-	position: absolute;
-	top: -5px;
-	left: -6px;
-	@include box-sizing(content-box);
-	width: 8px;
-	height: 8px;
-	background: darken($border-color, 10%);
-	border: 2px solid #fff;
-	border-radius: 10px;
-}
-
-.side-line {
-	position: absolute;
-	top: 10px;
-	bottom: 10px;
-	left: 115px;
-	z-index: -1;
-	border-left: 2px solid $border-color;
-}
-
-.project {
-	@include flex-basis(100%);
-	@include display(flex);
-	@include align-items(center);
-	border-radius: 0 5px 5px 0;
-	padding: 10px 20px;
-	border: 2px solid rgba($border-color, 0);
-	cursor: pointer;
-	position: relative;
-	border-left: 0;
-
-	&:active {
-		background: lighten($border-color, 5%);
-	}
-}
-
-.project__action__wrapper {
-	@include flex-basis(80px);
-	opacity: 0;
-	@include display(flex);
-	@include align-items(center);
-	@include justify-content(center);
-	@include box-sizing(content-box);
-	border: 2px solid $border-color;
-	background: #fff;
-	border-radius: 5px 0 0 5px;
-	border-right-width: 1px;
-	
-	&:before {
-		content: attr(title);
-		position:absolute;
-		display:block;
-		top:-10px;
-		right:578px;
-		white-space:nowrap;
-		padding:3px 5px;
-		background-color: #525f6b;
-		color:#fff;
-		z-index:10000;
-		opacity:0;
-        transition: opacity .25s 0.5s ease-in-out;
-   -moz-transition: opacity .25s 0.5s ease-in-out;
--webkit-transition: opacity .25s 0.5s ease-in-out;
-	}
-	&:hover:before {
-		opacity: 1;
-	}
-}
-
-.project__action {
-	@include display(flex);
-	@include align-items(center);
-	@include justify-content(space-around);
-	border: 1px solid darken($border-color, 10%);
-	box-shadow: 0 1px 3px -1px darken($border-color, 5%);
-	font-size: 13px;
-	font-weight: bold;
-	padding: 3px 5px;
-	border-radius: 3px;
-	color: #2b84d3;
-
-	&:active {
-		background: lighten($border-color, 4%);
-		box-shadow: 0 0 0 0 darken($border-color, 5%);
-	}
-}
-
-.icon {
-	font-weight: normal;
-	font-size: 17px;
-	font-family: entypo;
-	line-height: 0;
-	margin-right: 3px;
-}
-
-.project__intro {
-	font-size: 17px;
-}
-
-.project__title {
-	font-size: 20px;
-	font-weight: bold;
-	color: #206cab;
-	margin-right: 10px;
-}
-
-.project__logo {
-	$size: 48px;
-	@include display(flex);
-	@include align-items(center);
-	@include justify-content(center);
-	min-width: $size;
-	min-height: $size;
-	margin-right: 15px;
-	border-radius: $size;
-	box-shadow: 0 0 0 4px #fff;
-	background: #bbb;
-}
-
-.project__logo__icon {
-	font-size: 20px;
-	line-height: 0;
-	color: #fff;
-}
-
-.bg-yellow {
-	background: #edbb0f;
-}
-
-.project__category {
-	font-weight: 400;
-	font-size: 20px;
-	margin: 50px 0 10px 145px;
-	padding: 10px 0;
-	text-transform: uppercase;
-}
-
-.project__new {
-	position: absolute;
-	left: 20px;
-	top: 21px;
-	border: 2px solid #F8A34F;
-	border-radius: 5px;
-	padding: 1px 5px 2px;
-	font-weight: bold;
-	color: #F8A34F;
-	font-size: 13px;
-	@include transition-property(transform);
-	@include transition-duration(.2s);
-
-	+ .project__action__wrapper {
-		@include transition-property(opacity);
-		@include transition-duration(.4s);
-	}
-}
-
-.project-wrapper {
-	height: 100%;
-	width: 100%;
-	overflow-y: scroll;
-}
-
-.project__body {
-	padding: 50px;
-	font-size: 18px;
-	line-height: 1.6;
-}
-
-.project-poster {
-	> img {
-		width: 100%;
-		margin-bottom: -2px;
-	}
-}
-
-h1 {
-	font-size: 250%;
-	font-weight: 400;
-	color: #444;
-	font-family: Baskerville, serif;
-	font-weight: normal;
-}
-
-h2 {
-	font-size: 200%;
-	margin-top: 100px;
-	line-height: 0;
-	color: #444;
-	font-family: Baskerville, serif;
-	font-weight: normal;
-}
-
-.project-title {
-	color: #2980B9;
-}
-
-p, pre, h2, h1, ul {
-	max-width: 650px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-$flat-gray-1: #ECF0F1;
-
-.code {
+%code {
   // Style
   background: lighten($flat-gray-1, 3%);
   font-family: 'Source Code Pro', Consolas, Menlo;
-  font-size: 85%;
+  font-size: .8em;
   font-weight: normal;
-  line-height: 130%;
 }
 
 code {
-  @extend .code;
+  @extend %code;
 
   // Layout
-  padding: 2px 3px 1px;
+  padding: .1em .3em .15em;
   position: relative;
   top: -1px;
 
@@ -366,17 +82,18 @@ code {
 }
 
 pre {
-  @extend .code;
+  @extend %code;
   @extend %ios-scrolling;
 
   // Required
   overflow-x: auto;
+  white-space: pre;
 
   // Layout
-  padding: 7px 15px 9px;
+  padding: .5em 1.3em .7em;
 
   // Style
-  color: rgba(#000, 0.7);
+  color: rgba(#000, .7);
   border-top: 1px solid darken($flat-gray-1, 10%);
   border-bottom: 1px solid darken($flat-gray-1, 10%);
   box-shadow: 0 2px 1px -2px darken($flat-gray-1, 30%);
@@ -386,72 +103,315 @@ pre {
   }
 
   > code {
-  	border: 0;
-  	padding: auto;
-	  top: auto;
+    border: 0;
+    padding: 0;
+    top: auto;
+    font-size: 1.1em;
   }
 }
 
-//________________________________________
-html,
-body {
-
-	// Make it feel more app-like
-	//overflow: hidden;
+%paragraph-block {
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.fill-up {
-	width: 100%;
-	height: 100%;
+// HOME/INDEX
+.home {
+  padding: 1.5em 0;
+
+  @media screen and (min-width: 700px) {
+    padding: 2em 0;
+  } 
 }
 
-.a-layout__wrapper {
+.scilife-logo {
+  @include animation-name(flipInX);
+  @include animation-duration(.5s);
+  @include transform-style(preserve-3d);
+
+  &:active {
+    @include animation-name(tada);
+    @include animation-duration(1s);
+  }
+}
+
+.scilife-logo-img {
+  width: 80%;
+  max-width: 20em;
+
+  @media screen and (min-width: 400px) {
+    width: 70%;
+  }
+}
+
+.scilife-subheader {
+  font-size: 1em;
+
+  @media screen and (min-width: 400px) {
+    font-size: 1.1em;
+  }
+
+  @media screen and (min-width: 600px) {
+    font-size: 1.3;
+  }
+}
+
+.showcase {
+  margin: 2em auto 0;
   position: relative;
+
+  border-top: 1px solid $border-color;
+  @media screen and (min-width: 700px) {
+    max-width: 35em;
+    border-top: 0;
+    margin-top: 3em;
+  }
 }
 
-.a-layout {
-	@include display(flex);
-	width: 100%;
-	height: 100%;
-  position: absolute;
+.case-wrapper {
+  position: relative;
+  @include display(flex);
+  @include display(flex);
+  @include justify-content(space-between);
+
+  border-bottom: 1px solid $border-color;
+  @media screen and (min-width: 700px) {
+    border-bottom: 0;
+  }
+
+  &:hover {
+    > .case-action-wrapper {
+      opacity: 1;
+    }
+
+    > .case {
+      border-color: $border-color;
+    }
+
+    .case-logo {
+      @include animation-name(flip);
+      @include animation-duration(.7s);
+    }
+  }
 }
 
-.a-layout--vertical {
-	@extend .a-layout;
+.case {
+  @include flex-basis(100%);
+  @include display(flex);
+  @include align-items(center);
+  padding: 1em 1.5em;
+  cursor: pointer;
+  position: relative;
+  border-left: 0;
+  text-decoration: none;
 
-	@include flex-direction(column);
+  @media screen and (min-width: 400px) {
+    padding: 1em;
+  }
+
+  @media screen and (min-width: 500px) {
+    padding: 1em 2em;
+  }
+
+  @media screen and (min-width: 700px) {
+    // Hover event only on larger screens
+    border-radius: 0 5px 5px 0;
+    border: 2px solid rgba($border-color, 0);
+    padding: .6em 2em;
+  }
+
+  &:active {
+    background: lighten($border-color, 5%);
+  }
 }
 
-.a-layout__panel {
-	color: #DDD;
+.case-action-wrapper {
+  display: none;
+  text-decoration: none;
+  position: relative;
 
-	&:not(:last-of-type) {
-		border-right: 1px solid #ddd;
-	}
+  @media screen and (min-width: 400px) {
+    @include display(flex);
+    @include flex-basis(5em);
+    @include align-items(center);
+    @include justify-content(center);
+    @include box-sizing(content-box);
+  }
+
+  @media screen and (min-width: 700px) {
+    opacity: 0;
+    border: 2px solid $border-color;
+    border-radius: 5px 0 0 5px;
+    border-right: 0;
+  }
+  
+  &:before {
+    content: attr(alt);
+    position: absolute;
+    display: block;
+    border-radius: 3px;
+    top: -10px;
+    right: 5px;
+    font-size: .8em;
+    white-space: nowrap;
+    padding: 3px 5px;
+    background-color: #525f6b;
+    color: #fff;
+    z-index: 10000;
+    opacity: 0;
+    @include transition(opacity .2s .2s ease-in-out);
+  }
+
+  &:hover:before {
+    opacity: 1;
+  }
 }
 
-.a-layout__panel--full {
-	@extend .a-layout__panel;
+.case-action {
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(space-around);
+  border: 1px solid darken($border-color, 10%);
+  box-shadow: 0 1px 3px -1px darken($border-color, 5%);
+  font-size: .8em;
+  font-weight: bold;
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: #2b84d3;
 
-	@include flex-basis(100%);
+  &:hover {
+    background: lighten($border-color, 4%);
+  }
+
+  &:active {
+    background: lighten($border-color, 2%);
+    box-shadow: 0 0 0 0 darken($border-color, 5%);
+  }
 }
 
-.a-layout__panel--half {
-	@extend .a-layout__panel;
+.case-intro-title {
+  font-size: 1.2em;
+  color: #206cab;
 
-	@include flex-basis(50%);
+  @media screen and (min-width: 500px) {
+    font-size: 1.35em;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 5px;
+  }
 }
 
-.a-layout__panel--double {
-	@extend .a-layout__panel;
+.case-intro-text {
+  display: block;
+  font-size: .7em;
+  color: #525f6b;
 
-	@include flex-basis(200%);
+  @media screen and (min-width: 500px) {
+    font-size: .85em;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: .9em;
+    display: inline;
+  }
 }
 
-.is-scrollable {
-	overflow: auto;
+.case-logo {
+  $size: 48px;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  @include transform-style(preserve-3d);
+  min-width: $size;
+  min-height: $size;
+  margin-right: 15px;
+  border-radius: $size;
+  box-shadow: 0 0 0 4px #fff;
+  background: #bbb;
 }
 
-.list__item {
-	padding: 15px;
+.case-logo-icon {
+  font-size: 20px;
+  line-height: 0;
+  color: #fff;
+}
+
+.bg-yellow {
+  background: #edbb0f;
+}
+
+// PROJECT
+.project-body {
+  padding: 0 0 2em;
+
+  @media screen and (min-width: 500px) {
+    padding-top: 2em;
+  }
+
+  > p,
+  > h1,
+  > h2,
+  > ul {
+    @extend %paragraph-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+
+    @media screen and (min-width: 500px) {
+      width: 80%;
+    }
+  }
+
+  > .highlight {
+    @extend %paragraph-block;
+    max-width: 650px;
+  }
+
+  > h1 {
+    max-width: 750px;
+  }
+
+  > ul {
+    padding-left: 2em;
+
+    > li {
+      margin: .8em 0;
+    }
+  }
+}
+
+.project-poster {
+  > img {
+    width: 100%;
+    margin-bottom: -2px;
+  }
+}
+
+.project-title {
+  color: #2980b9;
+}
+
+// SECTIONS
+// FOOTER
+.scilife-footer {
+  border-top: 1px solid #dedede;
+  padding: 2em 0 2.5em;
+  text-align: center;
+
+  > .scilife-logo > .scilife-logo-img {
+    max-width: 11em;
+  }
+
+  > .subheader {
+    font-size: 12px;
+
+    a {
+      text-decoration: none;
+      color: #878787;
+    }
+  }
 }
