@@ -22,7 +22,6 @@ $border-color: #ebeef3;
 // BASE
 html,
 body {
-  width: 100%;
   height: 100%;
   // Render fonts thinner
   -webkit-font-smoothing: antialiased;
@@ -30,6 +29,11 @@ body {
   @media screen and (min-width: 500px) {
     font-size: 105%;
   }
+}
+
+.page-content,
+.project-wrapper {
+  height: 100%;
 }
 
 .text-center {
@@ -384,11 +388,21 @@ pre {
   }
 }
 
+$max-poster-height: 900px;
+.project-poster-wrapper {
+  // Background for larger screen sizes
+  background-color: rgba(#000, .9);
+  height: 100%;
+  max-height: $max-poster-height;
+}
+
 .project-poster {
-  > img {
-    width: 100%;
-    margin-bottom: -2px;
-  }
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .project-title {
