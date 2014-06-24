@@ -7,6 +7,7 @@ date: 2014-06-10 11:26:23
 categories: Pipelines
 icon: "icon-flow-tree"
 code: "https://github.com/ewels/clusterflow/"
+repo: "ewels/clusterflow"
 stars: 7
 poster: "clusterflow/poster.jpg"
 ---
