@@ -6,8 +6,8 @@ categories: jekyll update intro
 project: "Chanjo"
 icon_img: "chanjo/logo-48@2x.png"
 code: "https://github.com/robinandeer/chanjo"
+repo: "robinandeer/chanjo"
 intro: "Coverage analysis for clinical sequencing"
-stars: 14
 poster: "chanjo/poster.jpg"
 ---
 

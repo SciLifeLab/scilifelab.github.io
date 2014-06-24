@@ -17,10 +17,9 @@ layout: default
     <div class="showcase">
       {% for post in site.posts %}
         <div class="case-wrapper">
-          <a href="{{ post.code }}" alt="See the {{ post.project }} code" class="case-action-wrapper">
-            <div class="case-action">
+          <a href="https://github.com/{{ post.repo }}" alt="See the {{ post.project }} code" class="case-action-wrapper">
+            <div id="gh-stars-{{ forloop.index0 }}" class="case-action">
               <div class="icon-star"></div>
-              {{ post.stars }}
             </div>
           </a>
 
@@ -46,3 +45,13 @@ layout: default
   </section>
 
 </div>
+
+<script>
+  $(function() {
+    {% for post in site.posts %}
+      $.getJSON('https://api.github.com/repos/{{ post.repo }}', function(data) {
+        $('#gh-stars-{{ forloop.index0 }}').append(data.stargazers_count);
+      });
+    {% endfor %}
+  });
+</script>
