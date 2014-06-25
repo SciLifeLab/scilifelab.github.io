@@ -67,9 +67,16 @@ A more flexible solution is to provide your own icon as a ``.png`` or ``.svg`` f
 icon_img: my_project/my-icon.png
 ```
 
-It's highly recommended that you compose a poster image, for example with project logo. Don't worry too much about the file size - ~300-400 KB is totally fine. Bigger is better.
+It's highly recommended that you compose a poster image for your project. It doesn't have to be very difficult, just include 1) a large background image and 2) your project logo.
 
-Creating the poster doesn't have to be very difficult. Grab a [public domain][unsplash] [photo][magdeleine] and compose with [Sketch][sketch], Keynote, or Powerpoint.
+1. Consider an abstract or somewhat simple image. You can easily find great [public domain][unsplash] [photos][magdeleine] online.
+
+Don't worry too much about the file size - ~300-400 KB is totally fine. Make sure it is at least 1600x800 pixels. Finally, please consider running the background image through a [JPG minifier][jpegreducer] before commiting it to the repository.
+
+2. A Project logo can be composed with relatively cheap tools like [Sketch][sketch], Keynote, or Powerpoint. If you want something even simpler you can check out [Squarespace Logo](http://www.squarespace.com/logo/).
+
+Please look for options to export your logo in the vector format SVG. You  future proof your logo to work great on all screens (infinite scalability), it's a drop-in replacement for a regular (binary) PNG file, and you keep the size of the image as small as possible. 
+
 
 #### Step 3: Write the body of project page
 

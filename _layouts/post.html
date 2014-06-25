@@ -1,11 +1,24 @@
 ---
 layout: default
 ---
-{% if page.poster %}
+{% if page.poster_bg %}
+  <div class="project-poster-wrapper">
+    <div class="project-poster"
+         style="background-image: url(/img/{{ page.poster_bg }});">
+      <img src="/img/{{ page.poster_logo }}"
+           alt="Project logo"
+           height="{% if page.logo_height %}{{ page.logo_height }}{% else %}350{% endif %}">
+    </div>
+  </div>
+
+{% elsif page.poster %}
+  
+  <!-- Deprecated poster image style -->
   <div class="project-poster-wrapper">
     <div class="project-poster"
          style="background-image: url(/img/{{ page.poster }});"></div>
   </div>
+
 {% endif %}
 
 <div class="project-body">

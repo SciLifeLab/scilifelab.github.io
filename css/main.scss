@@ -5,6 +5,7 @@
 @import 'bourbon/bourbon';
 @import 'vendor/flex-box';
 @import 'vendor/highlight';
+@import 'mixins';
 
 // PLACEHOLDER SELECTORS
 // +--------------------------------------------------------------------
@@ -334,7 +335,6 @@ pre {
   min-height: $size;
   margin-right: 15px;
   border-radius: $size;
-  box-shadow: 0 0 0 4px #fff;
   background: #bbb;
 }
 
@@ -388,11 +388,9 @@ pre {
   }
 }
 
-$max-poster-height: 900px;
+$max-poster-height: 800px;
 .project-poster-wrapper {
-  // Background for larger screen sizes
-  background-color: rgba(#000, .9);
-  height: 100%;
+  height: 80%;
   max-height: $max-poster-height;
 }
 
@@ -401,8 +399,17 @@ $max-poster-height: 900px;
   background-position: center;
   height: 100%;
   width: 100%;
-  max-width: 1600px;
   margin: 0 auto;
+
+  // Avoid blur due to vertically centered child element
+  @include transform-style(preserve-3d);
+
+  > img {
+    @extend %vertical-align;
+    max-height: 80%;
+    margin: 0 auto;
+    display: table-cell;
+  }
 }
 
 .project-title {
