@@ -5,6 +5,7 @@
 @import 'bourbon/bourbon';
 @import 'vendor/flex-box';
 @import 'vendor/highlight';
+@import 'mixins';
 
 // PLACEHOLDER SELECTORS
 // +--------------------------------------------------------------------
@@ -22,7 +23,6 @@ $border-color: #ebeef3;
 // BASE
 html,
 body {
-  width: 100%;
   height: 100%;
   // Render fonts thinner
   -webkit-font-smoothing: antialiased;
@@ -30,6 +30,11 @@ body {
   @media screen and (min-width: 500px) {
     font-size: 105%;
   }
+}
+
+.page-content,
+.project-wrapper {
+  height: 100%;
 }
 
 .text-center {
@@ -190,7 +195,7 @@ pre {
     }
 
     .case-logo {
-      @include animation-name(flip);
+      @include animation-name(wobble);
       @include animation-duration(.7s);
     }
   }
@@ -330,7 +335,6 @@ pre {
   min-height: $size;
   margin-right: 15px;
   border-radius: $size;
-  box-shadow: 0 0 0 4px #fff;
   background: #bbb;
 }
 
@@ -384,10 +388,27 @@ pre {
   }
 }
 
+$max-poster-height: 800px;
+.project-poster-wrapper {
+  height: 80%;
+  max-height: $max-poster-height;
+}
+
 .project-poster {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+
+  // Avoid blur due to vertically centered child element
+  @include transform-style(preserve-3d);
+
   > img {
-    width: 100%;
-    margin-bottom: -2px;
+    @extend %vertical-align;
+    max-height: 80%;
+    margin: 0 auto;
+    display: table-cell;
   }
 }
 

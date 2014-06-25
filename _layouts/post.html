@@ -1,33 +1,43 @@
 ---
 layout: default
 ---
-<div class="project-wrapper">
-  
-  {% if page.poster %}
-    <div class="project-poster">
-      <img src="/img/{{ page.poster }}" alt="Project poster image">
+{% if page.poster_bg %}
+  <div class="project-poster-wrapper">
+    <div class="project-poster"
+         style="background-image: url(/img/{{ page.poster_bg }});">
+      <img src="/img/{{ page.poster_logo }}"
+           alt="Project logo"
+           height="{% if page.logo_height %}{{ page.logo_height }}{% else %}350{% endif %}">
     </div>
-  {% endif %}
-
-  <div class="project-body">
-    <h1 class="text-center">
-      <span class="project-title">{{ page.project }}</span> -
-      {{ page.title }}
-    </h1>
-
-    {{ content }}
   </div>
 
+{% elsif page.poster %}
+  
+  <!-- Deprecated poster image style -->
+  <div class="project-poster-wrapper">
+    <div class="project-poster"
+         style="background-image: url(/img/{{ page.poster }});"></div>
+  </div>
+
+{% endif %}
+
+<div class="project-body">
+  <h1 class="text-center">
+    <span class="project-title">{{ page.project }}</span> -
+    {{ page.title }}
+  </h1>
+
+  {{ content }}
 </div>
 
 <div class="scilife-footer">
 
-	<a class="scilife-logo" href="{{ site.url }}">
+  <a class="scilife-logo" href="{{ site.url }}">
     <img class="scilife-logo-img" src="{{ site.baseurl }}/img/scilifelab-logo.svg" title="Science for Life Laboratory" alt="SciLifeLab logo (small)" />
   </a>
 
-	<div class="subheader">
-		<a href="{{ site.url }}">Open source is in our DNA.</a>
-	</div>
+  <div class="subheader">
+    <a href="{{ site.url }}">Open source is in our DNA.</a>
+  </div>
 
 </div>

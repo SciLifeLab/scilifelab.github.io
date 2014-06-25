@@ -445,18 +445,39 @@ table {
   color: #009999; }
 
 /* Literal.Number.Integer.Long */
+.project-poster > img {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+/*
+ * Used to normalise select dropdowns 
+ * Styles from formalize.me
+ * @include normaliseSelect();
+ */
+/*
+ * @font-face mixin
+ * @include font-face('family', '../fonts/', 'myfontname');
+ */
 pre {
   -webkit-overflow-scrolling: touch; }
 
 html,
 body {
-  width: 100%;
   height: 100%;
   -webkit-font-smoothing: antialiased; }
   @media screen and (min-width: 500px) {
     html,
     body {
       font-size: 105%; } }
+
+.page-content,
+.project-wrapper {
+  height: 100%; }
 
 .text-center {
   text-align: center; }
@@ -589,9 +610,9 @@ pre {
   .case-wrapper:hover > .case {
     border-color: #ebeef3; }
   .case-wrapper:hover .case-logo {
-    -webkit-animation-name: flip;
-    -moz-animation-name: flip;
-    animation-name: flip;
+    -webkit-animation-name: wobble;
+    -moz-animation-name: wobble;
+    animation-name: wobble;
     -webkit-animation-duration: 0.7s;
     -moz-animation-duration: 0.7s;
     animation-duration: 0.7s; }
@@ -738,7 +759,6 @@ pre {
   min-height: 48px;
   margin-right: 15px;
   border-radius: 48px;
-  box-shadow: 0 0 0 4px #fff;
   background: #bbb; }
 
 .case-logo-icon {
@@ -776,9 +796,25 @@ pre {
     .project-body > ul > li {
       margin: .8em 0; }
 
-.project-poster > img {
+.project-poster-wrapper {
+  height: 80%;
+  max-height: 800px; }
+
+.project-poster {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
   width: 100%;
-  margin-bottom: -2px; }
+  margin: 0 auto;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+  .project-poster > img {
+    max-height: 80%;
+    margin: 0 auto;
+    display: table-cell; }
 
 .project-title {
   color: #2980b9; }
