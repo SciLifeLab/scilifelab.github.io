@@ -194,7 +194,7 @@ pre {
     }
 
     .case-logo {
-      @include animation-name(flip);
+      @include animation-name(wobble);
       @include animation-duration(.7s);
     }
   }
