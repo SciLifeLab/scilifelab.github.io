@@ -769,6 +769,38 @@ pre {
 .bg-yellow {
   background: #edbb0f; }
 
+.back-button {
+  background-color: #7cbe30;
+  display: block;
+  padding: 1em;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+  .back-button:active {
+    background-color: #6faa2b; }
+  @media screen and (min-width: 800px) {
+    .back-button {
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      border-radius: 3px;
+      padding: .5em .7em .5em .5em;
+      left: 1em;
+      position: fixed;
+      top: 1em; }
+      .back-button:active {
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2); }
+      .back-button > span {
+        margin-right: -2px;
+        position: relative;
+        top: 1px; } }
+
 .project-body {
   padding: 0 0 2em; }
   @media screen and (min-width: 500px) {
@@ -812,7 +844,10 @@ pre {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d; }
   .project-poster > img {
-    max-height: 80%;
+    height: auto;
+    width: auto;
+    max-width: 80%;
+    max-height: 350px;
     margin: 0 auto;
     display: table; }
 
@@ -821,6 +856,7 @@ pre {
 
 .scilife-footer {
   border-top: 1px solid #dedede;
+  background-color: #f7f7f7;
   padding: 2em 0 2.5em;
   text-align: center; }
   .scilife-footer > .scilife-logo > .scilife-logo-img {
