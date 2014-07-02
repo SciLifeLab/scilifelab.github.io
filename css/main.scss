@@ -408,7 +408,7 @@ $max-poster-height: 800px;
     @extend %vertical-align;
     max-height: 80%;
     margin: 0 auto;
-    display: table-cell;
+    display: table;
   }
 }
 

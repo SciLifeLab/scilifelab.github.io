@@ -4,12 +4,12 @@ title:  "Coverage analysis for clinical sequencing."
 date:   2014-05-14 07:06:51
 categories: jekyll update intro
 project: "Chanjo"
-icon_img: "chanjo/logo-48.svg"
+icon_img: "chanjo/logo-48.png"
 code: "https://github.com/robinandeer/chanjo"
 repo: "robinandeer/chanjo"
 intro: "Coverage analysis for clinical sequencing"
 poster_bg: "chanjo/poster.jpg"
-poster_logo: "chanjo/logo.svg"
+poster_logo: "chanjo/logo.png"
 ---
 
 ## Intro
