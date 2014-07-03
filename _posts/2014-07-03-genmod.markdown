@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "Annotate genetic patterns of inheritance"
+date:   2014-07-03 14:00:51
+categories: jekyll update intro
+project: "genmod"
+icon_img: "genmod/icon-7677.png"
+code: "http://github.com/moonso/genmod"
+repo: "moonso/genmod"
+intro: "Inheritance in family studies"
+poster_bg: "genmod/ryskt-hus.jpg"
+poster_logo: "genmod/genmod-logo.png"
+---
+
+## Intro
+**genmod** annotates patterns of inheritance in VCF files and handles arbitrary pedigrees.
+The idea is to set a standard for when we say that a certain pattern is followed and then annotate all variants as accurate as possible.
+This is a effective way to reduce the number of potential deleterious variants in family projects.
+
+**genmod** is a leightweight, multiprocessing command line tool that can annotate millions of variants in minutes.
+
+The genetic models that will be annotated are the following:
+
+* Autsomal Recessive, denoted 'AR'
+* Autsomal Recessive denovo, denoted 'AR_dn'
+* Autsomal Dominant, 'AD'
+* Autsomal Dominant denovo, 'AD_dn'
+* Autosomal Compound Heterozygote, 'AR_comp'
+* Autosomal Compound Heterozygote, 'AR_comp_dn'
+* X-linked dominant, 'XD'
+* X-linked dominant de novo, 'XD_dn'
+* X-linked Recessive, 'XR'
+* X-linked Recessive de novo, 'XR_dn'
+
+
+## Documentation
+Documentation can be found at [github][github].
+Example files and tests are included in the distribution
+
+## Installation
+
+{% highlight bash %}
+$ pip install genmod
+{% endhighlight %}
+
+
+or 
+
+{% highlight bash %}
+$git clone git@github.com:moonso/genmod.git
+$cd genmod
+$python setup.py install
+{% endhighlight %}
+
+Then run 
+
+{% highlight bash %}
+$ genmod
+{% endhighlight %}
+
+or try
+
+{% highlight bash %}
+$ genmod annotate examples/recessive_trio.ped examples/test_vcf.vcf
+{% endhighlight %}
+
+
+License
+--------
+MIT
+
+[github]: http://github.com/moonso/genmod "genmod on GitHub"
