@@ -4,7 +4,7 @@ title:  "Annotate genetic patterns of inheritance"
 date:   2014-07-03 14:00:51
 categories: jekyll update intro
 project: "genmod"
-icon_img: "genmod/icon-7677.png"
+icon_img: "genmod/logo-48.svg"
 code: "http://github.com/moonso/genmod"
 repo: "moonso/genmod"
 intro: "Inheritance in family studies"
@@ -69,4 +69,11 @@ License
 --------
 MIT
 
+Credits
+---------
+Tree by [Grant Taylor][grant] from [The Noun Project][noun-proj].
+
+
 [github]: http://github.com/moonso/genmod "genmod on GitHub"
+[grant]: http://thenounproject.com/habanerodesigns/
+[noun-proj]: http://thenounproject.com/
