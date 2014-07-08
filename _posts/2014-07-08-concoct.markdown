@@ -1,0 +1,15 @@
+---
+layout: post
+project: "CONCOCT"
+intro: "Clustering metagenomic contigs"
+title: "Clustering cONtigs with COverage and ComposiTion"
+date: 2014-07-08 11:42:00
+categories: jekyll update intro
+icon: "icon-feather"
+repo: "BinPro/CONCOCT"
+poster_bg: "concoct/poster.jpg"
+poster_logo: "concoct/logo.png"
+---
+
+## Intro
+CONCOCT is awesome
