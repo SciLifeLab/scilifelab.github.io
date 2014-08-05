@@ -24,7 +24,11 @@ layout: default
           </a>
 
           <a class="case" href="{{ post.url | prepend: site.baseurl }}">
-            <div class="case-logo animated bg-yellow">
+            {% if post.icon_bg %}
+						<div class="case-logo animated" style="background:{{ post.icon_bg }}">
+						{% else %}
+						<div class="case-logo animated bg-yellow">
+						{% endif %}
               {% if post.icon_img %}
                 <img class="case-logo-img"
                      src="/img/{{ post.icon_img }}"
