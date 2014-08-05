@@ -5,39 +5,53 @@ layout: default
 <div class="home">
 
   <header class="text-center">
-    <div class="scilife-logo animated bounceInUp">
-	  <img src="{{ site.baseurl }}/img/SciLifeLab_logo.png" title="Science for Life Laboratory" />
+    <div class="scilife-logo animated">
+	  <img class="scilife-logo-img" src="{{ site.baseurl }}/img/scilifelab-logo.svg" title="Science for Life Laboratory" alt="SciLifeLab logo" />
     </div>
-    <div class="subheader animated fadeIn delay-1s">
+    <div class="scilife-subheader">
       Open source is in our DNA.
     </div>
   </header>
 
-  <section class="animated fadeIn delay-1s">
-    <div class="project__list">
-      <div class="side-line"></div>
+  <section>
+    <div class="showcase">
+      {% for post in site.posts %}
+        <div class="case-wrapper">
+          <a href="https://github.com/{{ post.repo }}" alt="See the {{ post.project }} code" class="case-action-wrapper">
+            <div id="gh-stars-{{ forloop.index0 }}" class="case-action">
+              <div class="icon-star"></div>
+            </div>
+          </a>
 
-        {% for post in site.posts %}
-          <div class="project__wrapper">
-            <a href="{{ post.code }}" title="See the {{ post.project }} code" class="project__action__wrapper">
-              <div class="project__action">
-                <div class="icon-star"></div>
-                {{ post.stars }}
-              </div>
-            </a>
-
-            <a class="project" href="{{ post.url | prepend: site.baseurl }}">
-              <div class="project__logo bg-yellow">
-                <div class="project__logo__icon {{ post.icon }}"></div>
-              </div>
-              <div class="project__intro">
-                <span class="project__title">{{ post.project }}</span>
-                {{ post.intro }}
-              </div>
-            </a>
-          </div>
-        {% endfor %}
+          <a class="case" href="{{ post.url | prepend: site.baseurl }}">
+            <div class="case-logo animated bg-yellow">
+              {% if post.icon_img %}
+                <img class="case-logo-img"
+                     src="/img/{{ post.icon_img }}"
+                     width="48" height="48"
+                     alt="Project image logo">
+              {% else %}
+                <div class="case-logo-icon {{ post.icon }}"></div>
+              {% endif %}
+            </div>
+            <div class="case-intro">
+              <span class="case-intro-title">{{ post.project }}</span>
+              <span class="case-intro-text">{{ post.intro }}</span>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
     </div>
   </section>
 
 </div>
+
+<script>
+  $(function() {
+    {% for post in site.posts %}
+      $.getJSON('https://api.github.com/repos/{{ post.repo }}', function(data) {
+        $('#gh-stars-{{ forloop.index0 }}').append(data.stargazers_count);
+      });
+    {% endfor %}
+  });
+</script>

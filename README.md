@@ -1,13 +1,11 @@
-scilifelab.github.io
-====================
+# scilifelab.github.io [![Build Status](https://travis-ci.org/SciLifeLab/scilifelab.github.io.svg?branch=master)](https://travis-ci.org/SciLifeLab/scilifelab.github.io)
 
 Web portal for open source (research) projects at [SciLifeLab](http://www.scilifelab.se/). The site will feature complete, ready-for-use software along with proper documentation and installation instructions.
 
 Submit a pull request if you have a project that belongs on the list.
 
 
-General process overview
---------------------------
+## General process overview
 The first step will be to get the code.
 
 If you are a collaborator at the SciLifeLab GitHub organization it's easiest if you just clone the repo and if not, fork it.
@@ -17,18 +15,22 @@ Once you have the code, create a branch ``/project/my-awesome-project`` to work 
 Once you feel OK with the result and the code has been validated to work by lets say 2 other people, we will merge your code and the public site will update automatically.
 
 
-Setup (optional)
------------------
+## Setup (optional)
 It is recommended (but not required) to setup [Jekyll][jekyll] so that you can view the resulting website as you compose your project page.
 
 You first need ruby [installed][ruby install] on your system.
 
 Next we install our ruby dependencies.
 
+> If you get file permission errors, prefix the commands with sudo to run as an administrator.
+
 ```bash
+    $ gem install jekyll
     $ bundle install
     $ cd _sass && bourbon install && cd -
 ```
+
+> If you get the error `-bash: bundle: command not found` you need install it (`gem install bundle`), then log out and in again
 
 Now you should be prepared to serve the site locally.
 
@@ -41,8 +43,7 @@ The ``--watch`` option will watch for changes to file and recompile the static a
 See the [Jekyll Documentation](http://jekyllrb.com/docs/installation/) for more information.
 
 
-Adding a project page
-----------------------
+## Adding a project page
 Each project page is defined in a Jekyll post (markdown + YAML) and optionally a few assets.
 
 #### Step 1: Adding a new project page
@@ -58,11 +59,24 @@ To add a new project page to the repository/site do the following.
 There are a list of special assets that *optionally* belong to each of the projects. They are all defied in the YAML portion of the project markdown file.
 
 #### Step 2: Project branding
-A project icon can be chosen from the characters provided in the [Entypo icon font][entypo]. Find your corresponding class name in the [Entypo css file](http://cdn.jsdelivr.net/font-entypo/0.1/dev/entypo.css).
+A project icon can be picked as shown by on the list of projects. The easiest solution is picking an icon from one the characters provided in the [Entypo icon font][entypo]. Find your corresponding class name in the [Entypo css file](http://cdn.jsdelivr.net/font-entypo/0.1/dev/entypo.css).
 
-It's highly recommended that you compose a poster image, for example with project logo. Don't worry too much about the file size - ~300-400 KB is totally fine. Bigger is better.
+A more flexible solution is to provide your own icon as a ``.png`` or ``.svg`` file. Replace the "icon" key in the post-file for a "icon_img" field and type in the relative path to where you put the image from the "img"-folder. E.g. if you put the file under ``img/my_project/my-icon.png`` you would write:
 
-Creating the poster doesn't have to be very difficult. Grab a [public domain photo][unsplash] and compose with [Sketch][sketch], Keynote, or Powerpoint.
+```yaml
+icon_img: my_project/my-icon.png
+```
+
+It's highly recommended that you compose a poster image for your project. It doesn't have to be very difficult, just include 1) a large background image and 2) your project logo.
+
+1. Consider an abstract or somewhat simple image. You can easily find great [public domain][unsplash] [photos][magdeleine] online.
+
+Don't worry too much about the file size - ~300-400 KB is totally fine. Make sure it is at least 1600x800 pixels. Finally, please consider running the background image through a [JPG minifier][jpegreducer] before commiting it to the repository.
+
+2. A Project logo can be composed with relatively cheap tools like [Sketch][sketch], Keynote, or Powerpoint. If you want something even simpler you can check out [Squarespace Logo](http://www.squarespace.com/logo/).
+
+Please look for options to export your logo in the vector format SVG. You  future proof your logo to work great on all screens (infinite scalability), it's a drop-in replacement for a regular (binary) PNG file, and you keep the size of the image as small as possible. 
+
 
 #### Step 3: Write the body of project page
 
@@ -90,15 +104,14 @@ If you are having trouble figuring it out, just take a look at the source for an
 Finally, if you want to use any other assets like images inline with you text you should commit them to the repository. Store them in the ``img`` folder under a separate project directory for sanity.
 
 
-Developing SASS
------------------
+## Developing SASS
 GitHub doesn't support the new SASS compilation built into Jekyll 2.0. This creates a bit of an issue during development.
 
-If you want to make changes to the SASS files you will (for now) have to:
+If you want to make changes to the SASS files you will have to:
 
-1. Change ``main-compiled.css`` to ``main.css`` in ``_includes/head.html``.
-2. This will directly load the auto-compiled CSS-file when running ``jekyll server --watch``.
-3. When you are ready, copy the ``_site/css/main.css`` to ``css/main-compiled.css``.
+1. Change the ``environment`` variable in ``_config.yml`` to "development". This will make sure you can use Jekyll's freshly compiled SCSS->CSS file during development.
+2. Run ``jekyll server --watch`` and reload the browser after making some changes to the SCSS files.
+3. When you have finished tinkering, from the root of the project, run the ``_scripts/update_css.sh`` script to update the compiled CSS file which is used when ``environment: production``.
 4. Commit the SCSS and *compiled* CSS changes to the repository.
 
 
@@ -111,3 +124,4 @@ If you want to make changes to the SASS files you will (for now) have to:
 [md-tutorial]: http://markdowntutorial.com/
 [sketch]: http://bohemiancoding.com/sketch/
 [unsplash]: http://unsplash.com/
+[magdeleine]: http://magdeleine.co/

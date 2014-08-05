@@ -1,33 +1,49 @@
 ---
 layout: post
-title:  "Coverage analysis for clincal sequencing and beyond."
+title:  "Coverage analysis for clinical sequencing."
 date:   2014-05-14 07:06:51
 categories: jekyll update intro
 project: "Chanjo"
-icon: "icon-database"
+icon_img: "chanjo/logo-48.png"
 code: "https://github.com/robinandeer/chanjo"
+repo: "robinandeer/chanjo"
 intro: "Coverage analysis for clinical sequencing"
-stars: 11
-poster: "chanjo/poster.jpg"
+poster_bg: "chanjo/poster.jpg"
+poster_logo: "chanjo/logo.png"
 ---
 
+## Intro
+Chanjo breaks down coverage to intuitive levels of abstraction; genes, transcripts, exons, and intervals. It also introduces a new coverage metric that reduces the bias from uneven coverage.
+
+Chanjo is built around the idea of multiple levels of pipelines and fully embraces UNIX conventions. It’s easily incorporated into existing pipelines and provides a clear path for downstream analysis.
+
 {% highlight bash %}
-$ cat intervals.bed
+$ cat some_intervals.bed
 1  10 15 interval-1
 2  45 55 interval-2
-$ cat intervals.bed | chanjo annotate alignment.bam
+$ cat some_intervals.bed | chanjo annotate alignment.bam | tee annotations.bed
 #{"sample_id": "bavewira", ...}
 1  10 15 interval-1  9.92231     0.97231
 2  45 55 interval-2  14.23123 1.0
 {% endhighlight %}
 
-# Documentation
-The [redesigned documentation](http://www.chanjo.co) has all the information you want; getting started guide, foolproof installation instructions, and in-depth overviews.
+## Documentation
+The [redesigned documentation][docs] has all the information you want; getting started guide, foolproof installation instructions, and in-depth overviews.
 
-I can specifically recommend the fully [interactive demo](http://www.chanjo.co/en/latest/introduction.html#demo), complete with sample data to get you started right away.
+I can specifically recommend the fully [interactive demo][demo], complete with sample data to get you started *right away*.
 
-# Installation
+## Installation
 Complete instructions are available in the [documentation][docs] but installation (*can be*) as simple as running:
+
+If you're a [Conda][anaconda] user, begin by installing the required C-extensions:
+
+{% highlight bash %}
+$ conda install cython SQLAlchemy numpy
+# For Python 2.x users (pip installs pysam for Python 3.x)
+$ conda install pysam
+{% endhighlight %}
+
+And now for Chanjo:
 
 {% highlight bash %}
 $ pip install chanjo
@@ -35,13 +51,18 @@ $ pip install chanjo
 
 Contributors
 -------------
-Robin Andeer
+[Robin Andeer][portfolio] (<i class="icon-github"></i>[robinandeer][github], <i class="icon-twitter"></i>[robinandeer][twitter])
 
-Luca Beltrame ([lbeltrame](https://github.com/lbeltrame))
+Luca Beltrame (<i class="icon-github"></i>[lbeltrame](https://github.com/lbeltrame))
 
 
 License
 --------
 MIT
 
+[portfolio]: http://www.robinandeer.com "Robin's Portfolio"
+[github]: https://github.com/robinandeer "Find Robin on GitHub"
+[twitter]: http://twitter.com/robinandeer "Chat with Robin on Twitter"
 [docs]: http://www.chanjo.co
+[demo]: http://www.chanjo.co/en/latest/introduction.html#demo
+[anaconda]: https://store.continuum.io/cshop/anaconda/
