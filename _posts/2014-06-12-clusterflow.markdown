@@ -5,7 +5,7 @@ intro: "Simple pipelines for bioinformatics"
 title: "Automate and standardise bioinformatics analyses on cluster environments"
 date: 2014-06-10 11:26:23
 categories: Pipelines
-icon: "icon-flow-tree"
+icon_img: "clusterflow/logo-48.png"
 code: "https://github.com/ewels/clusterflow/"
 repo: "ewels/clusterflow"
 stars: 7
