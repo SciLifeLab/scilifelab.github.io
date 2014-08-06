@@ -15,7 +15,7 @@ poster_logo: "chanjo/logo.png"
 ## Intro
 Chanjo breaks down coverage to intuitive levels of abstraction; genes, transcripts, exons, and intervals. It also introduces a new coverage metric that reduces the bias from uneven coverage.
 
-Chanjo is built around the idea of multiple levels of pipelines and fully embraces UNIX conventions. It’s easily incorporated into existing pipelines and provides a clear path for downstream analysis.
+Chanjo is built around the idea of multiple levels of pipelines and fully embraces UNIX conventions. It's easily incorporated into existing pipelines and provides a clear path for downstream analysis.
 
 {% highlight bash %}
 $ cat some_intervals.bed
