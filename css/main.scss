@@ -112,6 +112,7 @@ pre {
     padding: 0;
     top: auto;
     font-size: 1.1em;
+    word-wrap: normal;
   }
 }
 
@@ -127,7 +128,7 @@ pre {
 
   @media screen and (min-width: 700px) {
     padding: 2em 0;
-  } 
+  }
 }
 
 .scilife-logo {
@@ -250,7 +251,7 @@ pre {
     border-radius: 5px 0 0 5px;
     border-right: 0;
   }
-  
+
   &:before {
     content: attr(alt);
     position: absolute;
