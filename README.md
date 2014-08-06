@@ -75,7 +75,7 @@ Don't worry too much about the file size - ~300-400 KB is totally fine. Make sur
 
 2. A Project logo can be composed with relatively cheap tools like [Sketch][sketch], Keynote, or Powerpoint. If you want something even simpler you can check out [Squarespace Logo](http://www.squarespace.com/logo/).
 
-Please look for options to export your logo in the vector format SVG. You  future proof your logo to work great on all screens (infinite scalability), it's a drop-in replacement for a regular (binary) PNG file, and you keep the size of the image as small as possible. 
+Please look for options to export your logo in the vector format SVG. You  future proof your logo to work great on all screens (infinite scalability), it's a drop-in replacement for a regular (binary) PNG file, and you keep the size of the image as small as possible.
 
 
 #### Step 3: Write the body of project page
@@ -105,14 +105,7 @@ Finally, if you want to use any other assets like images inline with you text yo
 
 
 ## Developing SASS
-GitHub doesn't support the new SASS compilation built into Jekyll 2.0. This creates a bit of an issue during development.
-
-If you want to make changes to the SASS files you will have to:
-
-1. Change the ``environment`` variable in ``_config.yml`` to "development". This will make sure you can use Jekyll's freshly compiled SCSS->CSS file during development.
-2. Run ``jekyll server --watch`` and reload the browser after making some changes to the SCSS files.
-3. When you have finished tinkering, from the root of the project, run the ``_scripts/update_css.sh`` script to update the compiled CSS file which is used when ``environment: production``.
-4. Commit the SCSS and *compiled* CSS changes to the repository.
+GitHub supports SCSS compilation, just commit the updates to the SCSS-files.
 
 
 [ruby install]: https://www.google.com/search?q=install+ruby&oq=install+ruby&aqs=chrome..69i57j0l5.469j0j1&sourceid=chrome&es_sm=91&ie=UTF-8 "Google 'ruby install'"
