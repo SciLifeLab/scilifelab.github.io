@@ -41,7 +41,7 @@ Dr Nick Loman (<i class="icon-github"></i>[nickloman][github_nick])
 
 [Joshua Quick](http://www.birmingham.ac.uk/schools/biosciences/staff/students/quick-joshua.aspx)
 
-Dr Anders Andersson (<i class="icon-github"></i>[andand][github_anders])
+[Dr Anders Andersson](http://www.kth.se/en/bio/research/genetech/genetech-researchers/anders-andersson-1.313799) (<i class="icon-github"></i>[andand][github_anders])
 
 ## License
 FreeBSD
