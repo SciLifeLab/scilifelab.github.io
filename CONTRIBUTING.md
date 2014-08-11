@@ -27,12 +27,27 @@ Next we install our ruby dependencies.
 Now you should be prepared to serve the site locally.
 
 ```bash
-	$ jekyll server --watch
+	$ jekyll serve --watch
 ```
 
 The ``--watch`` option will watch for changes to file and recompile the static assets automatically. Quite handy when you are writing your project page or altering SASS files.
 
 See the [Jekyll Documentation](http://jekyllrb.com/docs/installation/) for more information.
+
+### Vagrant
+You can also use Vagrant to setup development. This is nice since you don't need to mess with you system. With Vagrant, if you are perhaps a Python guy, you don't need to set up a local Ruby environment (or touch the system Ruby install).
+
+When you have [Vagrant properly set up](http://docs.vagrantup.com/v2/installation/), run:
+
+```bash
+	$ cd /path/to/scilifelab.github.io
+	$ vagrant up
+	$ vagrant ssh
+	$ cd /vagrant
+	$ jekyll serve --watch --port 8087
+```
+
+You should now be able to open a web browser and view the site on the URL: [http://0.0.0.0:8087/](http://0.0.0.0:8087/).
 
 
 ## Adding a project page
