@@ -50,7 +50,7 @@ body {
 
 // TYPOGRAPHY
 body {
-  font-family: Lato, 'Helvetica Neue', sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
   color: $font-color;
 }
 
@@ -153,6 +153,7 @@ pre {
 
 .scilife-subheader {
   font-size: 1em;
+  margin-top: .5em;
 
   @media screen and (min-width: 400px) {
     font-size: 1.1em;
