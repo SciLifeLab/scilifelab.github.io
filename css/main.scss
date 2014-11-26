@@ -19,6 +19,7 @@
 $font-color: #3e4853;  // dark gray
 $flat-gray-1: #eCf0f1;
 $border-color: #ebeef3;
+$bg-color: #2F80C3;
 
 // BASE
 html,
@@ -26,6 +27,8 @@ body {
   height: 100%;
   // Render fonts thinner
   -webkit-font-smoothing: antialiased;
+
+  background-color: $bg-color;
 
   @media screen and (min-width: 500px) {
     font-size: 105%;
@@ -124,55 +127,23 @@ pre {
 
 // HOME/INDEX
 .home {
-  padding: 1.5em 0;
-
-  @media screen and (min-width: 700px) {
-    padding: 2em 0;
-  }
-}
-
-.scilife-logo {
-  @include animation-name(flipInX);
-  @include animation-duration(.5s);
-  @include transform-style(preserve-3d);
-
-  &:active {
-    @include animation-name(tada);
-    @include animation-duration(1s);
-  }
+  padding: 1em 0;
 }
 
 .scilife-logo-img {
   width: 80%;
-  max-width: 20em;
-
-  @media screen and (min-width: 400px) {
-    width: 70%;
-  }
-}
-
-.scilife-subheader {
-  font-size: 1em;
-  margin-top: .5em;
-
-  @media screen and (min-width: 400px) {
-    font-size: 1.1em;
-  }
-
-  @media screen and (min-width: 600px) {
-    font-size: 1.3;
-  }
+  max-width: 30em;
+  margin-left: -1em;
 }
 
 .showcase {
-  margin: 2em auto 0;
+  margin: 1em auto 0;
   position: relative;
 
   border-top: 1px solid $border-color;
   @media screen and (min-width: 700px) {
     max-width: 35em;
     border-top: 0;
-    margin-top: 3em;
   }
 }
 
@@ -182,24 +153,14 @@ pre {
   @include display(flex);
   @include justify-content(space-between);
 
-  border-bottom: 1px solid $border-color;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(#000, .12), 0 2px 4px rgba(#000, .24);
   @media screen and (min-width: 700px) {
     border-bottom: 0;
   }
 
-  &:hover {
-    > .case-action-wrapper {
-      opacity: 1;
-    }
-
-    > .case {
-      border-color: $border-color;
-    }
-
-    .case-logo {
-      @include animation-name(wobble);
-      @include animation-duration(.7s);
-    }
+  &:active {
+    background: darken(#fff, 5%);
   }
 }
 
@@ -210,7 +171,6 @@ pre {
   padding: 1em 1.5em;
   cursor: pointer;
   position: relative;
-  border-left: 0;
   text-decoration: none;
 
   @media screen and (min-width: 400px) {
@@ -218,18 +178,7 @@ pre {
   }
 
   @media screen and (min-width: 500px) {
-    padding: 1em 2em;
-  }
-
-  @media screen and (min-width: 700px) {
-    // Hover event only on larger screens
-    border-radius: 0 5px 5px 0;
-    border: 2px solid rgba($border-color, 0);
-    padding: .6em 2em;
-  }
-
-  &:active {
-    background: lighten($border-color, 5%);
+    padding: 1em 1em;
   }
 }
 
@@ -240,20 +189,14 @@ pre {
 
   @media screen and (min-width: 400px) {
     @include display(flex);
-    @include flex-basis(5em);
+    @include flex-basis(8em);
     @include align-items(center);
     @include justify-content(center);
     @include box-sizing(content-box);
   }
 
-  @media screen and (min-width: 700px) {
-    opacity: 0;
-    border: 2px solid $border-color;
-    border-radius: 5px 0 0 5px;
-    border-right: 0;
-  }
-
   &:before {
+    // tooltip
     content: attr(alt);
     position: absolute;
     display: block;
@@ -267,10 +210,10 @@ pre {
     color: #fff;
     z-index: 10000;
     opacity: 0;
-    @include transition(opacity .2s .2s ease-in-out);
   }
 
   &:hover:before {
+    // show tooltip on hover
     opacity: 1;
   }
 }
@@ -391,6 +334,7 @@ pre {
 
 .project-body {
   padding: 0 0 2em;
+  background-color: #fff;
 
   @media screen and (min-width: 500px) {
     padding-top: 2em;
