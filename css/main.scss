@@ -130,6 +130,15 @@ pre {
   padding: 1em 0;
 }
 
+// white grid lines
+.home-overlay {
+  position: absolute;
+  background-image: url(../img/grid17.png);
+  opacity: .2;
+  height: 100%;
+  width: 100%;
+}
+
 .scilife-logo-img {
   width: 80%;
   max-width: 30em;
