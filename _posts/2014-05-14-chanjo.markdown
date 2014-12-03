@@ -33,14 +33,12 @@ An optional final step is to load results into a SQL database. This will aggrega
 ## Documentation
 The comprehensive [documentation][docs] has all the information you want; getting started guide, foolproof installation instructions, and in-depth overviews.
 
-## Installation
+## Installation [![PyPI version][fury-image]][fury-url] [![Build Status][travis-image]][travis-url]
 Complete instructions are available in the [docs][docs] but if you know what you are doing, Chanjo is installed by simply running:
 
 {% highlight bash %}
 $ pip install chanjo
 {% endhighlight %}
-
-**Release**: Wistful Weasel (2.3.0)
 
 Contributors
 -------------
@@ -59,3 +57,9 @@ MIT
 [twitter]: http://twitter.com/robinandeer "Chat with Robin on Twitter"
 [docs]: http://www.chanjo.co
 [demo]: http://www.chanjo.co/en/latest/introduction.html#demo
+
+[fury-url]: http://badge.fury.io/py/chanjo
+[fury-image]: https://badge.fury.io/py/chanjo.png
+
+[travis-url]: https://travis-ci.org/robinandeer/chanjo
+[travis-image]: https://travis-ci.org/robinandeer/chanjo.png?branch=master
