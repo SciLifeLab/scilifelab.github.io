@@ -313,10 +313,14 @@ pre {
   z-index: 1;
 
   @include user-select(none);
-  @include transition(box-shadow .2s cubic-bezier(0.4, 0, 0.2, 1));
+  @include transition(box-shadow .2s cubic-bezier(.4, 0, .2, 1));
+
+  &:hover {
+    background-color: lighten(#7cbe30, 5%);
+  }
 
   &:active {
-    background-color: darken(#7cbe30, 5%);
+    background-color: #7cbe30;
   }
 
   @media screen and (min-width: 800px) {
@@ -328,7 +332,7 @@ pre {
     position: fixed;
     top: 1em;
 
-    &:active {
+    &:hover {
       box-shadow: 0 6px 20px 0 rgba(#000, .19),
                   0 8px 17px 0 rgba(#000, .2);
     }
