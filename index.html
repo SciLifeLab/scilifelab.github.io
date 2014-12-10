@@ -2,14 +2,13 @@
 layout: default
 ---
 
+<div class="home-overlay"></div>
+
 <div class="home">
 
   <header class="text-center">
-    <div class="scilife-logo animated">
-	  <img class="scilife-logo-img" src="{{ site.baseurl }}/img/scilifelab-logo.svg" title="Science for Life Laboratory" alt="SciLifeLab logo" />
-    </div>
-    <div class="scilife-subheader">
-      Open source is in our DNA.
+    <div class="scilife-logo">
+      <img class="scilife-logo-img" src="{{ site.baseurl }}/img/scilifelab-logo-bp.svg" title="Science for Life Laboratory" alt="SciLifeLab logo" />
     </div>
   </header>
 
@@ -25,9 +24,9 @@ layout: default
 
           <a class="case" href="{{ post.url | prepend: site.baseurl }}">
             {% if post.icon_bg %}
-						<div class="case-logo animated" style="background:{{ post.icon_bg }}">
+						<div class="case-logo" style="background:{{ post.icon_bg }}">
 						{% else %}
-						<div class="case-logo animated bg-yellow">
+						<div class="case-logo bg-yellow">
 						{% endif %}
               {% if post.icon_img %}
                 <img class="case-logo-img"
