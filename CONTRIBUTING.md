@@ -35,7 +35,7 @@ The ``--watch`` option will watch for changes to file and recompile the static a
 See the [Jekyll Documentation](http://jekyllrb.com/docs/installation/) for more information.
 
 ### Vagrant
-You can also use Vagrant to setup development. This is nice since you don't need to mess with you system. With Vagrant, if you are perhaps a Python guy, you don't need to set up a local Ruby environment (or touch the system Ruby install).
+You can also use Vagrant to setup development. This is nice since you don't need to mess with you system. With Vagrant, if you are perhaps a Python guy or gal, you don't need to set up a local Ruby environment (or touch the system Ruby install).
 
 When you have [Vagrant properly set up](http://docs.vagrantup.com/v2/installation/), run:
 
