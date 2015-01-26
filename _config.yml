@@ -1,7 +1,11 @@
 # Site settings
 title: Open Source at SciLifeLab
 email: robin.andeer@scilifelab.se
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+description: >
+  A curated list of useful and actively maintained projects at
+  SciLifeLab. You can find code ranging from simple bioinformatics
+  resources and general programming tools right through to complete
+  data analysis pipelines.
 baseurl: ""
 url: "http://opensource.scilifelab.se"
 

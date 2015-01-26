@@ -21,7 +21,7 @@ $ concoct --composition_file contigs.fa --coverage_file coverage_table.tsv -b co
 {% endhighlight %}
 
 ## Documentation
-For the most comprehensive information about the usage and function of CONCOCT so far, see the [complete example](https://github.com/BinPro/CONCOCT/blob/master/doc/complete_example.md).
+For the most comprehensive information about the usage and function of CONCOCT so far, see the [complete example](https://github.com/BinPro/CONCOCT/blob/master/doc/source/complete_example.rst).
 
 ## Installation
 For up to date instructions for installation, see [github](https://github.com/BinPro/CONCOCT#installation).
