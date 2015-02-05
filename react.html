@@ -2,27 +2,31 @@
 ---
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ReactFire Todo App Demo</title>
+<head>
+  <title>ReactFire Todo App Demo</title>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <!-- React JS -->
-    <script src="https://fb.me/react-0.12.0.min.js"></script>
-    <script src="https://fb.me/JSXTransformer-0.12.0.js"></script>
-    <!-- Firebase -->
-    <script src="https://cdn.firebase.com/js/client/2.1.2/firebase.js"></script>
-    <!-- ReactFire -->
-    <script src="https://cdn.firebase.com/libs/reactfire/0.4.0/reactfire.min.js"></script>
+  <!-- React JS -->
+  <script src="https://fb.me/react-0.12.0.min.js"></script>
+  <script src="https://fb.me/JSXTransformer-0.12.0.js"></script>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.1.2/firebase.js"></script>
+  <!-- ReactFire -->
+  <script src="https://cdn.firebase.com/libs/reactfire/0.4.0/reactfire.min.js"></script>
 
-    <!-- Custom JS -->
-    <script type="text/jsx" src="/js/todoApp.js"></script>
+  <!-- Custom JS -->
+  <script type="text/jsx" src="/js/todoApp.js"></script>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-  </head>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+</head>
 
-  <body>
+<body>
+
+  <div class="home-overlay"></div>
+
+  <div class="home">
 
     <header class="text-center">
       <div class="scilife-logo">
@@ -31,7 +35,13 @@
     </header>
 
     <section>
-      <div id="todoApp3" class="showcase"></div>
+      <h2 class="section-header">Projects</h2>
+      <div id="project-list" class="showcase"></div>
+
+      <h2 class="section-header">Developers</h2>
+      <div id="developer-list" class="showcase"></div>
     </section>
-  </body>
+
+  </div>
+</body>
 </html>

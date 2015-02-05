@@ -38,15 +38,11 @@ var ProjectList = React.createClass({
     var createItem = function(item, index) {
       return (
         <div key={ index } className="case-wrapper">
-          <a href={ "https://github.com/" + item.repo } className="case-action-wrapper">
+          <a href={ item.code } className="case-action-wrapper" alt={ "Visit the " + item.name + " repo" }>
             <RepoStars repo={ item.repo } />
           </a>
 
-          <a className="case" href="#">
-            <div className="case-logo bg-yellow">
-              <div className="case-logo-icon"></div>
-            </div>
-
+          <a className="case" href={ "/projects/" + item.repo }>
             <div className="case-intro">
               <span className="case-intro-title">{ item.name }</span>
               <span className="case-intro-text">{ item.intro }</span>
@@ -56,8 +52,42 @@ var ProjectList = React.createClass({
       );
     };
 
-    return <div>{ this.state.projects.map(createItem) }</div>;
+    return (
+      <div>{ this.state.projects.map(createItem) }</div>
+    );
   }
 });
 
-React.render(<ProjectList />, document.getElementById('todoApp3'));
+var DeveloperList = React.createClass({
+  mixins: [ReactFireMixin],
+
+  getInitialState: function() {
+    return {developers: []}
+  },
+
+  componentWillMount: function() {
+    var firebaseRef = new Firebase('https://scilifelab-eboss.firebaseio.com/developers/');
+    this.bindAsArray(firebaseRef.limitToLast(25), 'developers');
+  },
+
+  render: function() {
+    var createDeveloper = function(developer, index) {
+      return (
+        <div key={ index } className="case-wrapper">
+          <a className="case" href={ "/developers/" + developer.username }>
+            <div className="case-intro">
+              <span className="case-intro-title">{ developer.name }</span>
+            </div>
+          </a>
+        </div>
+      );
+    };
+
+    return (
+      <div>{ this.state.developers.map(createDeveloper) }</div>
+    )
+  }
+});
+
+React.render(<ProjectList />, document.getElementById('project-list'));
+React.render(<DeveloperList />, document.getElementById('developer-list'))
