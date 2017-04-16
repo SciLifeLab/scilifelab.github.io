@@ -151,8 +151,19 @@ pre {
 
   border-top: 1px solid $border-color;
   @media screen and (min-width: 700px) {
-    max-width: 35em;
+    max-width: 35rem;
     border-top: 0;
+  }
+}
+
+.section-header {
+  max-width: 35rem;
+  margin: 0 auto;
+  color: #fff;
+  display: block;
+
+  &:not(:first-child) {
+    margin-top: 3rem;
   }
 }
 
